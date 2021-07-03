@@ -3,23 +3,33 @@ import Image from 'next/image'
 import Header from '../Component/Header'
 import Trusted from '../Component/Trusted'
 import DoubleSection from '../Component/DoubleSection'
-import { sanityClient, urlFor } from '../sanity'
+import Free from '../Component/Free'
+import Ratings from '../Component/Ratings'
+import Teams from '../Component/Teams'
+import Tools from '../Component/Tools'
+import CostSection from '../Component/CostSection'
+import { sanityClient } from '../sanity'
 
 const postQuery = `*[_type == 'post'] {
 	_id,
-  title,
+  name,
   slug,
+  positions,
   mainImage,
   body
 }`
 
 export default function Home({posts}) {
-// console.log(posts)
   return (
     <div>
       <Header />
       <Trusted />
+      <Tools />
       <DoubleSection />
+      <CostSection />
+      <Free />
+      <Teams posts={posts} />
+      <Ratings />
     </div>
   )
 }

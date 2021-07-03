@@ -2,7 +2,6 @@ import {
     createImageUrlBuilder,
     createPortableTextComponent,
     createPreviewSubscriptionHook,
-    createCurrentUserHook,
     createClient,
   } from 'next-sanity'
 
