@@ -19,7 +19,8 @@ const useStyles = makeStyles({
     root: {
         textAlign: 'center',
         padding: " 70px 0",
-        backgroundColor: "#EAF2F3"
+        backgroundColor: "#EAF2F3",
+        position: 'relative'
     },
     heading: {
         fontWeight: '600',
@@ -41,7 +42,22 @@ const useStyles = makeStyles({
     name: {
         color: '#9B9B9B',
         paddingBottom: "5px"
-    }
+    },
+    btn: {
+        textAlign: "center",
+        color: "white",
+        width: '250px',
+        backgroundColor: "#9ABB54",
+        padding: '10px 0px',
+        borderRadius: '30px',
+        fontWeight: '600',
+        fontSize: "18px",
+        backgroundImage: "linear-gradient(-180deg,#accf60 4%,#a3c559 18%,#93b24f 59%,#83a044 100%)",
+        marginBottom: '60px',
+        position: 'absolute',
+        right: "40%",
+        bottom: "10%"
+    },
 })
 
 const Tools = () => {
@@ -108,6 +124,16 @@ const Tools = () => {
                                     </Grid>
                                 ))
                             }
+                            <div className={classes.bottom}>
+                            <div className={classes.btn}>
+                                <div>
+                                    START YOUR TRAIL
+                                </div>
+                                <div>
+                                    No Card Needed
+                                </div>
+                            </div>
+                            </div>
                         </Grid>
                     </Grid>
                     <Grid item xs={12} md={4} className={classes.personDetails}>

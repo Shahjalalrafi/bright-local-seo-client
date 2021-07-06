@@ -3,8 +3,10 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import headerSvg from '../public/svg/headersvg.svg'
 
 import header from '../public/images/header.png'
+import { urlFor } from '../sanity';
 
 const useStyles = makeStyles({
     root: {
@@ -15,7 +17,8 @@ const useStyles = makeStyles({
         color: '#549FBA'
     },
     title: {
-        fontWeight: '600'
+        fontWeight: '600',
+        padding: '0 70px'
     },
     desc: {
         fontWeight: "600",
@@ -38,25 +41,28 @@ const useStyles = makeStyles({
     }
 })
 
-const Header = () => {
+const Header = ({header}) => {
     const classes = useStyles()
+    console.log(header)
     return (
         <main className={classes.root}>
             <Container>
+                <Image src={headerSvg} alt='header' width={50} height={50} />
                 <Typography variant='h6' className={classes.heading}>
-                    Local SEO Tools
+                    {header[0].heading}
                 </Typography>
                 <Typography variant='h3' align='center' className={classes.title}>
-                    An all-in-one platform to monitor, audit, and improve local SEO
+                    {header[0].title}
                 </Typography>
                 <Typography variant="subtitle1" align='center' className={classes.desc}>
-                    Save time and make smarter decisions with BrightLocal.
+                   {header[0].description[0].children[0].text}
                 </Typography>
                 <Button variant="contained" className={classes.btn}>
                     TRY FOR FREE
                 </Button>
             </Container>
-                <Image src={header} alt="header" height={600} width={900} className={classes.img} />
+                <img src={urlFor(header[0].mainImage).url()} alt='trusted team' width={900} height={500} />
+                {/* <Image src={header} alt="header" height={600} width={900} className={classes.img} /> */}
         </main>
     );
 }

@@ -3,13 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-
-import img1 from '../public/images/img1.png'
-import img2 from '../public/images/img2.png'
-import img3 from '../public/images/img3.png'
-import img4 from '../public/images/img4.png'
-import img5 from '../public/images/img5.png'
-import img6 from '../public/images/img6.png'
+import { urlFor } from '../sanity'
 
 const useStyles = makeStyles({
     root: {
@@ -25,35 +19,9 @@ const useStyles = makeStyles({
     }
 })
 
-const Trusted = () => {
+const Trusted = ({trusted}) => {
     const classes = useStyles()
-
-    const trusted = [
-        {
-            id: 1,
-            img: img1
-        },
-        {
-            id: 2,
-            img: img2
-        },
-        {
-            id: 3,
-            img: img3
-        },
-        {
-            id: 4,
-            img: img4
-        },
-        {
-            id: 5,
-            img: img5
-        },
-        {
-            id: 6,
-            img: img6
-        },
-    ]
+    
     return (
         <main className={classes.root}>
             <Container>
@@ -64,7 +32,7 @@ const Trusted = () => {
                     {
                         trusted.map(trust => (
                             <Grid item xs={6} md={2} key={trust.id} className={classes.grid}>
-                                <Image src={trust.img} alt='trusted image' />
+                                <img src={urlFor(trust.mainImage).url()} alt='trusted team' width={200} height={150} />
                             </Grid>
                         ))
                     }
@@ -73,5 +41,6 @@ const Trusted = () => {
         </main>
     );
 }
+
 
 export default Trusted;

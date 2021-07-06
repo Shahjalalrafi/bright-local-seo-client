@@ -20,7 +20,9 @@ const useStyles = makeStyles({
         height: '600px',
         margin: "20px",
         backgroundColor: "#FFFFFF",
-        borderRadius: "20px"
+        borderRadius: "20px",
+        cursor: "pointer",
+        boxShadow: '2px 3px 8px #d2d2d2'
     },
     img: {
         borderRadius: "20px"
@@ -53,7 +55,7 @@ const Teams = ({ posts }) => {
                 <Grid container>
 
                     {
-                        posts.map(post => (
+                       posts && posts.map(post => (
                             <Grid key={post._id} item xs={12} md={4}>
                                 <Link href={`/teams/${post.slug.current}`}>
                                     <div className={classes.card}>

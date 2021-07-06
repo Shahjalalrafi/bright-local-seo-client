@@ -34,13 +34,29 @@ const useStyles = makeStyles({
     tableCell: {
         color: 'white'
     },
-    btn:{
+    buttonSection: {
         backgroundColor: "#6854BA",
-        marginBottom: "50px",
-        padding: '15px 40px',
-        margin:'0 10px',
+        borderRadius: "25px",
+        width: '200px',
+        margin: 'auto',
+        marginBottom: "15px",
+    },
+    btnleft: {
         color: "white",
         fontWeight: "600",
+        width: '100px',
+        borderRadius: "25px",
+        padding: '10px',
+        "&:hover": {
+            backgroundColor: "black"
+        }
+    },
+    btnRight: {
+        color: "white",
+        fontWeight: "600",
+        width: '100px',
+        borderRadius: "25px",
+        padding: '10px',
         "&:hover": {
             backgroundColor: "black"
         }
@@ -91,13 +107,14 @@ const CostSection = () => {
                 <Typography variant="subtitle2" className={classes.desc}>
                     (Based on tracking 50 locations on our SEO Pro plan – just $79/month)
                 </Typography>
-                <Button className={classes.btn} onClick={() => setPricing(false)}>
-                    Features
-                </Button>
-                <Button className={classes.btn} onClick={() => setPricing(true)}>
-                    Pricing
-                </Button>
-
+                <div className={classes.buttonSection}>
+                    <Button className={classes.btnleft} onClick={() => setPricing(false)}>
+                        Features
+                    </Button>
+                    <Button className={classes.btnRight} onClick={() => setPricing(true)}>
+                        Pricing
+                    </Button>
+                </div>
 
 
 
